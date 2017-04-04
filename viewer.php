@@ -17,21 +17,21 @@ Adobe CMap resources are covered by their own copyright and license:
 http://sourceforge.net/adobe/cmap/wiki/License/
 -->
 <html dir="ltr" mozdisallowselectionprint moznomarginboxes>
-<head data-workersrc="lib/pdfjs/build/pdf.worker.js">
+<head data-workersrc="assets/lib/pdfjs/build/pdf.worker.js">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="google" content="notranslate">
     <meta name="referrer" content="never">
     <title>PDF.js viewer</title>
 
-    <link rel="stylesheet" href="lib/pdfjs/web/viewer.css"/>
-    <script src="lib/pdfjs/web/compatibility.js"></script>
+    <link rel="stylesheet" href="assets/lib/pdfjs/web/viewer.css"/>
+    <script src="assets/lib/pdfjs/web/compatibility.js"></script>
     <!-- This snippet is used in production (included from viewer.html) -->
-    <link rel="resource" type="application/l10n" href="lib/pdfjs/web/locale/locale.properties"/>
-    <script src="lib/pdfjs/web/l10n.js"></script>
-    <script src="lib/pdfjs/build/pdf.js"></script>
-    <script src="lib/pdfjs/web/viewer.js"></script>
-    <script src="js/workersrc.js"></script>
+    <link rel="resource" type="application/l10n" href="assets/lib/pdfjs/web/locale/locale.properties"/>
+    <script src="assets/lib/pdfjs/web/l10n.js"></script>
+    <script src="assets/lib/pdfjs/build/pdf.js"></script>
+    <script src="assets/lib/pdfjs/web/viewer.js"></script>
+    <script src="assets/js/workersrc.js"></script>
 </head>
 <body tabindex="1" class="loadingInProgress">
 <div id="outerContainer">
