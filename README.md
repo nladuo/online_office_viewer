@@ -1,11 +1,16 @@
 # online_office_viewer
-a solution for previewing doc/ppt/xls via unoconv.
+a PHP solution for previewing doc/ppt/xls.
+
+## Dependencies
+```
+sudo apt-get install unoconv redis-server php5-redis
+```
 
 ## Installation
 ```
-sudo apt-get install unoconv redis-server
-```
+git clone https://github.com/nladuo/online_office_viewer.git
 
+```
 
 ## LICENSE
 MIT
