@@ -1,2 +1,11 @@
 # online_office_viewer
-online office viewer via unoconv.
+a solution for previewing doc/ppt/xls via unoconv.
+
+## Installation
+```
+sudo apt-get install unoconv redis-server
+```
+
+
+## LICENSE
+MIT
