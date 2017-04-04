@@ -1,1 +1,1 @@
-lib/* linguist-vendored=false
+*.js linguist-language=PHP
