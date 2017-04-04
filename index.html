@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Office Viewer</title>
+    <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery.ajaxupload.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+<div id="loading" class="loading" style="display: none">
+    <img src="./assets/imgs/loadingBar.gif"/>
+</div>
+<form id="form-1" class="modal-body">
+    <h5>Choose a office file</h5>
+    <input type="file" name="uploadfile" />
+</form>
+<br/>
+<div>
+    <button id="upload_btn">Click And Upload</button>
+</div>
+
+<script type="text/javascript">
+    $('#upload_btn').click(function() {
+        $("#loading").css("display", "block");
+        $('#form-1').ajaxUpload({
+            url : '/api/handle.php',
+            error : function () {
+                $("#loading").css("display", "none");
+                alert("upload failed");
+            },
+            success : function (data) {
+                $("#loading").css("display", "none");
+                data = JSON.parse(data);
+                if (data.code == 0){
+                    alert("upload and convert success");
+                    window.location.href = "/viewer.html?file=" + encodeURIComponent(data.data.href);
+                }else{
+                    alert(data.msg);
+                }
+            }
+        });
+    });
+
+
+</script>
+</body>
+
+</html>
