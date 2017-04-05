@@ -7,6 +7,8 @@
     <script type="text/javascript" src="./assets/js/jquery.ajaxupload.js"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/lib/jquery-toast-plugin/dist/jquery.toast.min.css">
+    <script type="text/javascript" src="./assets/lib/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
 </head>
 <body>
     <div id="loading" class="loading" style="display: none">
@@ -23,22 +25,40 @@
 </body>
 <script type="text/javascript">
     $('#upload_btn').click(function() {
+        $.toast({
+            text : "Start Uploading",
+            hideAfter: false,
+            position : 'mid-center'
+        });
         $("#loading").css("display", "block");
         $('#form-1').ajaxUpload({
             url : '/api/handle.php',
             error : function () {
                 $("#loading").css("display", "none");
-                alert("upload failed");
+                $.toast({
+                    stack: 1,
+                    text : "Upload Failed",
+                    hideAfter: false
+                });
             },
             success : function (data) {
                 $("#loading").css("display", "none");
                 data = JSON.parse(data);
                 if (data.code == 0){
-                    alert("upload and convert success");
-//                    alert(data.data.href);
-                    window.location.href = "/viewer.html?file=" + encodeURIComponent(data.data.href);
+                    $.toast({
+                        stack: 1,
+                        text : "Upload and Convert success",
+                        hideAfter: false
+                    });
+                    setTimeout(function () {
+                        window.location.href = "/viewer.html?file=" + encodeURIComponent(data.data.href);
+                    }, 3000);
                 }else{
-                    alert(data.msg);
+                    $.toast({
+                        stack: 1,
+                        text : data.msg,
+                        hideAfter: false
+                    });
                 }
             }
         });
