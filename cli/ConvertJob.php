@@ -12,8 +12,14 @@ class ConvertJob
     {
         $filename = $this->args["filename"];
 
+        # Convert the pdf
         fwrite(STDOUT, "start converting ". $filename. "\n");
         shell_exec("unoconv -f pdf " . "../uploaded_files/".$filename);
-        fwrite(STDOUT, "converted ". $filename. " success\n");
+        fwrite(STDOUT, "converted ". $filename. " finished\n");
+
+        # remove the office file
+        fwrite(STDOUT, "start converting ". $filename. "\n");
+        shell_exec("rm -f " . "../uploaded_files/".$filename);
+        fwrite(STDOUT, "removed ". $filename. " success\n");
     }
 }
