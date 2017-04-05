@@ -14,7 +14,7 @@ cd online_office_viewer && composer install
 redis-server
 ```
 
-### 2. Start Convert Worker
+### 2. Start the Convert-Worker
 ``` sh
 bash ./cli/start_worker.sh
 ```
