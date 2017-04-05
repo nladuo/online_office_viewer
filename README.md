@@ -1,5 +1,5 @@
 # online_office_viewer
-preview doc/ppt/xls via unoconv.
+preview doc/ppt/xls online via unoconv.
 
 ## Installation
 ``` sh

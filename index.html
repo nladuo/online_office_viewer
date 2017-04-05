@@ -2,23 +2,25 @@
 <html>
 <head>
     <title>Online Office Viewer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="./assets/js/jquery.ajaxupload.js"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<div id="loading" class="loading" style="display: none">
-    <img src="./assets/imgs/loadingBar.gif"/>
-</div>
-<form id="form-1" class="modal-body">
-    <h5>Choose a office file</h5>
-    <input type="file" name="uploadfile" />
-</form>
-<br/>
-<div>
-    <button id="upload_btn">Click And Upload</button>
-</div>
+    <div id="loading" class="loading" style="display: none">
+        <img src="./assets/imgs/loadingBar.gif"/>
+    </div>
+    <div class="container">
+        <form id="form-1" class="form">
+            <label>Choose an office file</label>
+            <input type="file" name="uploadfile" /><br>
+        </form>
+        <button class="btn btn-primary" id="upload_btn">Click And Upload</button>
+    </div>
 
+</body>
 <script type="text/javascript">
     $('#upload_btn').click(function() {
         $("#loading").css("display", "block");
@@ -33,6 +35,7 @@
                 data = JSON.parse(data);
                 if (data.code == 0){
                     alert("upload and convert success");
+//                    alert(data.data.href);
                     window.location.href = "/viewer.html?file=" + encodeURIComponent(data.data.href);
                 }else{
                     alert(data.msg);
@@ -43,6 +46,5 @@
 
 
 </script>
-</body>
 
 </html>
