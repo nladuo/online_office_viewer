@@ -36,14 +36,14 @@ function wait_convert($filename) {
     return $code == 4;
 }
 
-$allowed_exts = ["doc", "docx", "ppt", "pptx", "xls", "xlsx"];
+$allowed_exts = ["doc", "docx", "ppt", "pptx", "xls", "xlsx", "odt"];
 
 $upload_dir = '../uploaded_files/';
 
 $uploader = new FileUpload('uploadfile');
 
 if (!in_array($uploader->getExtension(), $allowed_exts)) {
-    response(1, "error extension", "");
+    response(1, "the extension " . $uploader->getExtension() . " is not supported", "");
 }
 
 $uuid = create_uuid();
