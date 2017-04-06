@@ -49,9 +49,7 @@ function wait_conversion($filename) {
 
 // 1. Check the extension of upload file.
 $allowed_exts = ["doc", "docx", "ppt", "pptx", "xls", "xlsx", "odt"];
-
 $upload_dir = '../uploaded_files/';
-
 $uploader = new FileUpload('uploadfile');
 
 if (!in_array($uploader->getExtension(), $allowed_exts)) {
