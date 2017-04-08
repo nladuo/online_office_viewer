@@ -16,14 +16,16 @@ redis-server
 
 ### 2. Start the Convert-Worker
 ``` sh
-bash ./cli/start_worker.sh
+cd online_office_viewer/cli
+bash ./start_worker.sh
 ```
 
 ### 3. Start Web Server
 ```
+cd online_office_viewer
 php -S 0.0.0.0:8888
 ```
-Now, You can visit localhost:8888 and upload a office file to see result.
+Now, You can visit http://localhost:8888/ and upload a office file to see result.
 
 ## LICENSE
 MIT
